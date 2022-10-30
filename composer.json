@@ -1,6 +1,7 @@
 {
     "name": "tjallingf/simple-php-router",
-    "description": "A simple router written in PHP, but similar to Node.js Express.",
+    "description": "Template for a simple router project written in PHP, but similar to Node.js Express.",
+    "type": "project",
     "require": {
         "php": ">=7.4"
     },
