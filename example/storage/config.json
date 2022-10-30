@@ -1,0 +1,8 @@
+{
+    "controllers": {
+        "locale": {
+            "available_locales": ["nl_NL", "en_US"],
+           	"default_locale": "en_US" 
+        }
+    }
+}

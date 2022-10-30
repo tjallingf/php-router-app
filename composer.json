@@ -1,0 +1,12 @@
+{
+    "name": "tjall/tjalling.net",
+    "autoload": {
+        "files": [
+            "app/helpers.php"
+        ],
+        "psr-4": {
+            "Tjall\\Router\\": "app/"
+        }
+    },
+    "optimize-autoloader": true
+}
