@@ -1,17 +1,18 @@
 {
     "name": "tjallingf/simple-php-router",
     "description": "Template for a simple router project written in PHP, but similar to Node.js Express.",
-    "type": "project",
+    "version": "1.0.1",
+    "license": "Apache-2.0",
     "require": {
         "php": ">=7.4"
     },
     "autoload": {
         "files": [
-            "app/helpers.php"
+            "app/router/helpers.php"
         ],
         "psr-4": {
-            "Tjall\\Router\\": "app/"
+            "Tjall\\Router\\": "app/router/"
         }
     },
-    "license": "Apache-2.0"
+    "type": "project"
 }
