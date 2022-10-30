@@ -1,6 +1,6 @@
 {
     "name": "tjall/simple-php-router",
-    "description": "A simple router written in PHP, but similar to Node.js.",
+    "description": "A simple router written in PHP, but similar to Node.js Express.",
     "require": {
         "php": ">=7.4"
     },
