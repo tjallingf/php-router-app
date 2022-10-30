@@ -1,5 +1,5 @@
 {
-    "name": "tjall/router",
+    "name": "tjall/simple-php-router",
     "description": "A simple router written in PHP, but similar to Node.js.",
     "require": {
         "php": ">=7.4"
