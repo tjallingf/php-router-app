@@ -1,5 +1,9 @@
 {
-    "name": "tjall/tjalling.net",
+    "name": "tjall/router",
+    "description": "A simple router written in PHP, but similar to Node.js.",
+    "require": {
+        "php": ">=7.4"
+    },
     "autoload": {
         "files": [
             "app/helpers.php"
@@ -8,5 +12,5 @@
             "Tjall\\Router\\": "app/"
         }
     },
-    "optimize-autoloader": true
+    "license": "Apache-2.0"
 }
