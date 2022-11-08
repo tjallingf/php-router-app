@@ -16,10 +16,6 @@
                 return "<script src=\"{$src}\" type=\"module\" defer></script>";
             } else {
                 $src = self::getPublicLocation($filepath);
-
-                if(!$src)
-                    return "<script>console.error('Cannot find script \"{$filepath}\".');</script>";
-
                 return "<script src=\"{$src}\" defer></script>";
             }
         }
@@ -32,10 +28,6 @@
                 self::safeInject();
             } else {
                 $src = self::getPublicLocation($filepath);
-
-                if(!$src)
-                    return "<script>console.error('Cannot find stylesheet \"{$filepath}\".');</script>";
-
                 return "<link rel=\"stylesheet\" href=\"{$src}\" />";
             }
         }
@@ -52,13 +44,14 @@
             // use glob to find the file matching `$filepath`.
             $filename = pathinfo($filepath, PATHINFO_FILENAME);
             $file_ext = pathinfo($filepath, PATHINFO_EXTENSION);
-            $local_src = @glob(join_paths(root_dir(), "/public/dist/{$filename}.*.{$file_ext}"))[0];
+            $local_src = @glob(join_paths(root_dir(), "/public/static/dist/{$filename}.*.{$file_ext}"))[0];
 
             // Return if no file was found
-            if(!$local_src) return null;
+            if(!isset($local_src))
+                $local_src = join_paths(root_dir(), $filepath);
 
             // Turn the local location into the public location
-            $public_src = str_replace_first(join_paths(root_dir(), '/public/'), '', $local_src);
+            $public_src = str_replace_first(join_paths(root_dir(), 'public'), '', $local_src);
 
             return $public_src;
         }

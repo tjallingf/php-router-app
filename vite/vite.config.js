@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [react()],
   root: 'src',
   build: {
-    outDir: '../../public/dist',
+    outDir: '../../public/static/dist',
     assetsDir: './',
     emptyOutDir: true,
     rollupOptions: {
