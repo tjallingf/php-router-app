@@ -30,15 +30,17 @@
         public static function answer(string $method, string $url, array $options = []) {
             $listener = self::findListener($method, $url);
             
-            if(!isset($listener) && Config::get('controllers.staticasset.enabled')) {
+            if(!isset($listener)) {
                 $res = Middleware::get('Response');
-                
-                // Check if a static asset exists
-                $static_asset = StaticAsset::getFilename($url);
 
-                // If a file was found, send it
-                if(!is_null($static_asset))
-                    return $res::init()::sendFile($static_asset)::end();
+                if(Config::get('controllers.staticasset.enabled')) {
+                    // Check if a static asset exists
+                    $static_asset = StaticAsset::getFilename($url);
+
+                    // If a file was found, send it
+                    if(!is_null($static_asset))
+                        return $res::init()::sendFile($static_asset)::end();
+                }
 
                 // Otherwise throw an error
                 return $res::init(['json' => true])::throw(404, 'Not found')::end();
