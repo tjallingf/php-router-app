@@ -64,7 +64,7 @@
                 set_error_handler(function ($errno, $errstr, $errfile, $errline) use($res) {
                     if (!(error_reporting() & $errno)) return;
 
-                    return $res::throw(Error::asArray($errno, $errstr, $errfile, $errline));
+                    return $res::throw(500, Error::asArray($errno, $errstr, $errfile, $errline));
                 });
             }
             
