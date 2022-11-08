@@ -3,7 +3,7 @@
     use Tjall\App\Helpers\Url;
     use Tjall\App\Controllers\Config;
 
-    require_once(__DIR__.'/../app/autoload.php');
+    require_once(__DIR__.'/../lib/autoload.php');
 
     $relative_url = Url::makeRelative(Url::strip($_SERVER['REQUEST_URI'], false), @Config::get('root') ?? '');
 

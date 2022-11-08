@@ -7,10 +7,10 @@
     },
     "autoload": {
         "files": [
-            "app/helpers.php"
+            "lib/helpers.php"
         ],
         "psr-4": {
-            "Tjall\\App\\": "app/"
+            "Tjall\\App\\": ["lib/", "app/"]
         }
     },
     "type": "project"
