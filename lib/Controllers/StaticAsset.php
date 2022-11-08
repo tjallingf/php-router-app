@@ -17,7 +17,7 @@
             $absolute_directory = join_paths(root_dir(), 'public', $relative_directory);
             if(!is_dir($absolute_directory))
                 throw new Exception("Directory for static assets ($absolute_directory) does not exist.");
-
+            
             self::$relative_directory = $relative_directory;
             self::$absolute_directory = $absolute_directory;
         }
@@ -30,10 +30,12 @@
 
             // Check if the requested file is in the
             // directory used for static assets
-            if(str_starts_with($url, self::$relative_directory)) {
+            if(str_contains($url, self::$relative_directory)) {
                 $relative_url = Url::makeRelative($url, self::$relative_directory);
                 $filename = join_paths(self::$absolute_directory, $relative_url);
-                return $filename;
+
+                if(file_exists($filename))
+                    return $filename;
             }
 
             return null;
