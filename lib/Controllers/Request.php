@@ -4,12 +4,12 @@
     use Tjall\Lib\Models\User;
 
     class Request {
-        public static string $url;
-        public static string $method;
-        public static array $params;
-        public static array $query;
-        public static $user;
-        public static $body;
+        protected static string $url;
+        protected static string $method;
+        protected static array $params;
+        protected static array $query;
+        protected static $user;
+        protected static $body;
 
         public static function init(string $url, array $listener, array $params) {
             self::$url = $url;
@@ -18,7 +18,8 @@
             self::$query = $_GET;
             self::$body = $_POST;
             
-            self::$user = @User::find($_SESSION['user_username'] ?? 'default') ?? @User::find('default');
+            if(Config::get('controllers.user.enabled'))
+                self::$user = @User::find($_SESSION['user_username'] ?? 'default') ?? @User::find('default');
         
             return __CLASS__;
         }

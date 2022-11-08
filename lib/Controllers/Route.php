@@ -7,7 +7,7 @@
     use Tjall\Lib\Helpers\Error;
 
     class Route {
-        private static $listeners = [];
+        protected static $listeners = [];
 
         public static function listen(string $method, string $url, callable $callback, array $options = []) {
             $url = Url::strip($url, false);
