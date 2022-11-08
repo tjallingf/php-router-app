@@ -2,6 +2,7 @@
     namespace Tjall\Lib\Controllers;
 
     use Tjall\Lib\Controllers\Middleware;
+    use Tjall\Lib\Controllers\Config;
     use Tjall\Lib\Helpers\Url;
     use Tjall\Lib\Helpers\Error;
 
@@ -29,7 +30,7 @@
         public static function answer(string $method, string $url, array $options = []) {
             $listener = self::findListener($method, $url);
             
-            if(!isset($listener)) {
+            if(!isset($listener) && Config::get('controllers.staticasset.enabled')) {
                 $res = Middleware::get('Response');
                 
                 // Check if a static asset exists
