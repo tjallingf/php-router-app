@@ -33,7 +33,7 @@
             if(!isset($listener)) {
                 $res = Response::class;
                 $res::init(['json' => true]);
-                return $res::throw(404)::end();
+                return $res::throw(404, 'quizlet')::end();
             }
 
             $merged_options = array_merge($options, $listener['options']);

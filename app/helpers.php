@@ -11,6 +11,14 @@
         return preg_replace('~[/\\\\]+~', DIRECTORY_SEPARATOR, implode(DIRECTORY_SEPARATOR, $paths));
     }
 
+    function str_replace_first(string $search, string $replace, string $subject) {
+        $pos = strpos($subject, $search);
+        if($pos === false)
+            return $subject;
+
+        return substr_replace($subject, $replace, $pos, strlen($search));
+    }
+
     // ---------------------------- //
     //          POLYFILLS           //
     // ---------------------------- //

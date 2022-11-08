@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInitdf7919b34f6669584a9c99bac8a44f01
 {
     public static $files = array (
-        '80d360d15698f0269d18991fdeeb67e6' => __DIR__ . '/../..' . '/app/router/helpers.php',
+        'd85c0ca231fff9ab86bb31c40590c87e' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -20,7 +20,7 @@ class ComposerStaticInitdf7919b34f6669584a9c99bac8a44f01
     public static $prefixDirsPsr4 = array (
         'Tjall\\Router\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app/router',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

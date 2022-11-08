@@ -2,7 +2,7 @@
     namespace Tjall\Router\Controllers;
 
     class Locale {
-        public static string $locale = '';
+        public static string $locale;
         public static array $translations = [];
 
         public static function init($locale) {

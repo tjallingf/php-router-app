@@ -1,1 +1,7 @@
-{}
+{
+    "view.index.title": "Home",
+    "view.index.sample_content": "This is a sample text, based on the user's locale.",
+    "view.about.title": "About",
+    "view.about.field.name.title": "Name",
+    "view.about.field.name.note": "The name was specified by the router."
+}

@@ -62,11 +62,22 @@
                 $url = strtok($url, '?');
 
 
-            return rtrim(strtolower($url), '/');
+            return rtrim(rtrim(strtolower($url), '/'), '?');
         }
 
-        public static function fromRoot($url, $root) {
-            return rtrim(substr($url, strpos($url, $root)), '/');
+        public static function makeRelative($url, $root) {
+            if(empty($root)) return $url;
+
+            $url = str_replace_first('/public', '', $url);
+            
+            $pos = strpos($url, $root);
+
+            return $pos ? substr($url, $pos + strlen($root)) : $url;
+        }
+
+        public static function join(...$items) {
+            return implode('/', array_map(function($item) {
+                return trim($item, '/');
+            }, $items));
         }
     }
-?>

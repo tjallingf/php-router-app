@@ -7,10 +7,10 @@
     },
     "autoload": {
         "files": [
-            "app/router/helpers.php"
+            "app/helpers.php"
         ],
         "psr-4": {
-            "Tjall\\Router\\": "app/router/"
+            "Tjall\\Router\\": "app/"
         }
     },
     "type": "project"
