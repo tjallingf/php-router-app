@@ -32,7 +32,7 @@
         }
 
         protected static function getTranslations() {
-            $pattern = root_dir() . "/storage/locale/*.json";
+            $pattern = join_paths(root_dir(), 'storage/app/locale/*.json');
             $files = glob($pattern);
 
             $translations = [];
