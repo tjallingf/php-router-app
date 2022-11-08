@@ -1,5 +1,5 @@
 <?php
-    namespace Tjall\App\Helpers;
+    namespace Tjall\Lib\Helpers;
 
     class Url {
         public static function getParts(string $listener_url) {

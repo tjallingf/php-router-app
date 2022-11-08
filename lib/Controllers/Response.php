@@ -1,7 +1,7 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Controllers\StaticAsset;
+    use Tjall\Lib\Controllers\StaticAsset;
 
     class Response {
         public static int $status = 0;

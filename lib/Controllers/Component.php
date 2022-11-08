@@ -1,5 +1,7 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
+
+    use Tjall\Lib\Controllers\Middleware;
 
     class Component {
         public static function include(string $filename, array $data = []) {
@@ -8,7 +10,7 @@
             if(!is_file($path))
                 exit("Cannot find component '{$filename}'.");
            
-            $req = Request::class;
+            $req = Middleware::get('Request');
             $data['user'] = $req::getUser();
             // Declare variables for inside the script
             foreach ($data as $key => $value) {

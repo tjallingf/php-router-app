@@ -1,4 +1,5 @@
 {
+    "development": true,
     "controllers": {
         "locale": {
             "enabled": true,
@@ -14,6 +15,11 @@
         "staticasset": {
             "enabled": true,
             "directory": "static"
+        }
+    },
+    "vite": {
+        "server": {
+            "port": 5173
         }
     }
 }

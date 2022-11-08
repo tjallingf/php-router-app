@@ -1,10 +1,10 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Controllers\Config;
+    use Tjall\Lib\Controllers\Config;
 
     class Vite {
-        protected static bool $injected = false;
+        protected static bool $hasInjected = false;
 
         public static function script(string $filepath) {
             // The port at which Vite runs
@@ -16,6 +16,10 @@
                 return "<script src=\"{$src}\" type=\"module\" defer></script>";
             } else {
                 $src = self::getPublicLocation($filepath);
+
+                if(!$src)
+                    return "<script>console.error('Cannot find script \"{$filepath}\".');</script>";
+
                 return "<script src=\"{$src}\" defer></script>";
             }
         }
@@ -23,9 +27,15 @@
         public static function stylesheet(string $filepath) {
             // In development mode, scripts take care of the stylesheets
             // as well, so they only have to be rendered in production.
-
-            if(@Config::get('development') !== true) {
+            
+            if(@Config::get('development') === true) {
+                self::safeInject();
+            } else {
                 $src = self::getPublicLocation($filepath);
+
+                if(!$src)
+                    return "<script>console.error('Cannot find stylesheet \"{$filepath}\".');</script>";
+
                 return "<link rel=\"stylesheet\" href=\"{$src}\" />";
             }
         }
@@ -37,17 +47,15 @@
         * 
         * @return string The public location of the file.
         */
-        protected static function getPublicLocation(string $filepath): string {
+        protected static function getPublicLocation(string $filepath) {
             // Vite adds some hexadecimal characters in the filename, 
             // use glob to find the file matching `$filepath`.
             $filename = pathinfo($filepath, PATHINFO_FILENAME);
-            $fileext = pathinfo($filepath, PATHINFO_EXTENSION);
-            $type = ($fileext == 'js' ? 'script' : 'stylesheet');
-            $local_src = @glob(join_paths(root_dir(), "/public/dist/{$filename}.*.{$fileext}"))[0];
+            $file_ext = pathinfo($filepath, PATHINFO_EXTENSION);
+            $local_src = @glob(join_paths(root_dir(), "/public/dist/{$filename}.*.{$file_ext}"))[0];
 
-            // Throw an error of no file was found
-            if(!$local_src)
-                return "<script>console.error('Cannot find {$type} \"{$filepath}\".');</script>";
+            // Return if no file was found
+            if(!$local_src) return null;
 
             // Turn the local location into the public location
             $public_src = str_replace_first(join_paths(root_dir(), '/public/'), '', $local_src);
@@ -63,10 +71,10 @@
         * @return Vite.
         */
         protected static function safeInject() {
-            if(self::$injected)
+            if(self::$hasInjected)
                 return;
 
-            self::$injected = true;
+            self::$hasInjected = true;
             
             echo('
                 <script type="module">

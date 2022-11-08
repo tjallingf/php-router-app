@@ -1,7 +1,7 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Models\User;
+    use Tjall\Lib\Models\User;
 
     class Request {
         public static string $url;

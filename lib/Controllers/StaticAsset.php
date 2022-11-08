@@ -1,10 +1,10 @@
 <?php
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
     use Exception;
-    use Tjall\App\Exceptions\DisabledControllerException;
-    use Tjall\App\Controllers\Config;
-    use Tjall\App\Helpers\Url;
+    use Tjall\Lib\Exceptions\DisabledControllerException;
+    use Tjall\Lib\Controllers\Config;
+    use Tjall\Lib\Helpers\Url;
 
     // Load list of mime types
     require(join_paths(root_dir(), '/storage/app/mime_types.php'));

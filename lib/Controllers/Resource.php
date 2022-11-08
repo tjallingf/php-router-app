@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
     class Resource {
         public static function include(string $path, bool $is_critical = false) {

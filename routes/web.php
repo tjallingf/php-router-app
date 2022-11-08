@@ -1,6 +1,6 @@
 <?php 
-    use Tjall\App\Controllers\Route;
-    use Tjall\App\Controllers\View;
+    use Tjall\Lib\Controllers\Route;
+    use Tjall\Lib\Controllers\View;
 
     Route::get('/', function($req, $res) {
         return $res::send(View::get('index'));

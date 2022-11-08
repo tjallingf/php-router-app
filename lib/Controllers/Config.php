@@ -1,8 +1,8 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Helpers\Arr;
-    use Tjall\App\Controllers\Storage;
+    use Tjall\Lib\Helpers\Arr;
+    use Tjall\Lib\Controllers\Storage;
 
     class Config {
         public static array $data = [];

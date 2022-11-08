@@ -1,7 +1,6 @@
 <?php
-    use Tjall\App\Controllers\Config;
-    use Tjall\App\Controllers\Locale;
-    use Tjall\App\Controllers\StaticAsset;
+    use Tjall\Lib\Controllers\Config;
+    use Tjall\Lib\Controllers\Middleware;
 
     // -------------------------- //
     //          COMPOSER          //
@@ -44,7 +43,7 @@
 
     // Start session
     if(Config::get('controllers.staticasset.enabled')) {
-        StaticAsset::init(trim(str_replace('\\', '/', Config::get('controllers.staticasset.directory')), '/'));
+        Middleware::get('StaticAsset')::init(trim(str_replace('\\', '/', Config::get('controllers.staticasset.directory')), '/'));
     }
 
     // -------------------------- //
@@ -70,5 +69,5 @@
         $locale = in_array(@$_COOKIE['locale'], $available_locales) ? $_COOKIE['locale'] : @Config::get('controllers.locale.default_locale');
 
         // Initialize locale controller
-        Locale::init($locale);
+        Middleware::get('Locale')::init($locale);
     }

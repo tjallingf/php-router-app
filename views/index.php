@@ -1,6 +1,6 @@
 <?php 
-    use Tjall\App\Controllers\Component; 
-    use Tjall\App\Controllers\Locale;
+    use Tjall\Lib\Controllers\Component; 
+    use Tjall\Lib\Controllers\Locale;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,5 +10,6 @@
     <main>
         <?php echo(Locale::translate('view.index.sample_content')); ?>
     </main>
+    <div id="root"></div>
 </body>
 </html>

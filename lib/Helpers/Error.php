@@ -1,5 +1,5 @@
 <?php
-    namespace Tjall\App\Helpers;
+    namespace Tjall\Lib\Helpers;
 
     class Error {
         public static function asArray(int $errno, string $errstr, string $errfile, int $errline) {

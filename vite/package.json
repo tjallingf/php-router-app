@@ -1,5 +1,5 @@
 {
-  "name": "rabo",
+  "name": "simple-php-router",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,16 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.13.5",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.2.0",
+    "sass": "^1.56.0",
+    "vite": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.4.2",
     "react-router-dom": "^6.4.2"
   },
-  "devDependencies": {
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "@vitejs/plugin-react": "^2.2.0",
-    "vite": "^3.2.0"
-  }
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

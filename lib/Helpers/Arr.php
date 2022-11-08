@@ -1,5 +1,5 @@
 <?php
-    namespace Tjall\App\Helpers;
+    namespace Tjall\Lib\Helpers;
 
     class Arr {
         public static function getPath(array $arr, string $path) {

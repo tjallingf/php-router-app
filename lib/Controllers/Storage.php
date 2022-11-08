@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
     class Storage {
         public static function storeJSON(string $filename, $key, $data) {           

@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\App\Exceptions;
+    namespace Tjall\Lib\Exceptions;
 
     use Throwable;
     use Exception;

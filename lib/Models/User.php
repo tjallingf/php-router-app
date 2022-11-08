@@ -1,9 +1,9 @@
 <?php
-    namespace Tjall\App\Models;
+    namespace Tjall\Lib\Models;
 
-    use Tjall\App\Models\Model;
-    use Tjall\App\Controllers\Config;
-    use Tjall\App\Exceptions\DisabledControllerException;
+    use Tjall\Lib\Models\Model;
+    use Tjall\Lib\Controllers\Config;
+    use Tjall\Lib\Exceptions\DisabledControllerException;
 
     class User extends Model {
         public static function all() {

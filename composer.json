@@ -10,7 +10,8 @@
             "lib/helpers.php"
         ],
         "psr-4": {
-            "Tjall\\App\\": ["lib/", "app/"]
+            "Tjall\\Lib\\": ["lib/"],
+            "Tjall\\App\\": ["app/"]
         }
     },
     "type": "project"

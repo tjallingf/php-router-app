@@ -1,5 +1,7 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
+
+    use Tjall\Lib\Controllers\Middleware;
 
     class View {
         public static function get(string $__filename, array $__data = []) {
@@ -9,7 +11,7 @@
                 exit("Cannot find view '{$__filename}'.");
 
             // Declare variables for inside the script
-            $__user = (Request::class)::getUser();
+            $__user = Middleware::get('Request')::getUser();
             
             $__data['lang'] = str_replace('_', '-', @$__user['settings']['locale']);
             $__data['view'] = $__filename;

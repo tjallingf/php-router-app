@@ -1,8 +1,8 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Controllers\Config;
-    use Tjall\App\Exceptions\DisabledControllerException;
+    use Tjall\Lib\Controllers\Config;
+    use Tjall\Lib\Exceptions\DisabledControllerException;
 
     class Locale {
         public static string $locale;

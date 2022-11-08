@@ -1,11 +1,9 @@
 <?php 
-    namespace Tjall\App\Controllers;
+    namespace Tjall\Lib\Controllers;
 
-    use Tjall\App\Controllers\Response;
-    use Tjall\App\Controllers\Request;
-    use Tjall\App\Controllers\StaticAsset;
-    use Tjall\App\Helpers\Url;
-    use Tjall\App\Helpers\Error;
+    use Tjall\Lib\Controllers\Middleware;
+    use Tjall\Lib\Helpers\Url;
+    use Tjall\Lib\Helpers\Error;
 
     class Route {
         private static $listeners = [];
@@ -32,7 +30,7 @@
             $listener = self::findListener($method, $url);
             
             if(!isset($listener)) {
-                $res = Response::class;
+                $res = Middleware::get('Response');
                 
                 // Check if a static asset exists
                 $static_asset = StaticAsset::getFilename($url);
@@ -47,10 +45,10 @@
 
             $merged_options = array_merge($options, $listener['options']);
             
-            $res = Response::class;
+            $res = Middleware::get('Response');
             $res::init($merged_options);
 
-            $req = Request::class;
+            $req = Middleware::get('Request');
             $params = Url::getParams($url, $listener['parts']);
             $req::init($url, $listener, $params);
 
