@@ -1,7 +1,7 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
-    use Tjall\Router\Models\User;
+    use Tjall\App\Models\User;
 
     class Request {
         public static string $url;
@@ -19,6 +19,8 @@
             self::$body = $_POST;
             
             self::$user = @User::find($_SESSION['user_username'] ?? 'default') ?? @User::find('default');
+        
+            return __CLASS__;
         }
 
         public static function getParam($id) {

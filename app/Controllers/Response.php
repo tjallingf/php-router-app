@@ -1,5 +1,7 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
+
+    use Tjall\App\Controllers\StaticAsset;
 
     class Response {
         public static int $status = 0;
@@ -9,6 +11,8 @@
 
         public static function init(array $options = []) {
             self::$options = $options;
+
+            return __CLASS__;
         }
 
         public static function send($data) {
@@ -64,5 +68,16 @@
 
         public static function redirect(string $dest) {
             self::$redirect = $dest;
+        }
+
+        public static function sendFile(string $filename) {
+            $content_type = StaticAsset::getContentType($filename);
+            $content_length = filesize($filename);
+            $content = file_get_contents($filename);
+
+            return self
+                ::header('Content-Type', $content_type)
+                ::header('Content-Length', $content_length)
+                ::send($content);
         }
     }

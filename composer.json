@@ -10,7 +10,7 @@
             "app/helpers.php"
         ],
         "psr-4": {
-            "Tjall\\Router\\": "app/"
+            "Tjall\\App\\": "app/"
         }
     },
     "type": "project"

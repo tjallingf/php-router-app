@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tjall\\Router\\' => array($baseDir . '/app'),
+    'Tjall\\App\\' => array($baseDir . '/app'),
 );

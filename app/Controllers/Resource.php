@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
     class Resource {
         public static function include(string $path, bool $is_critical = false) {

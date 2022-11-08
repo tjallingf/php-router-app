@@ -1,5 +1,5 @@
 <?php
-    namespace Tjall\Router\Helpers;
+    namespace Tjall\App\Helpers;
 
     class Url {
         public static function getParts(string $listener_url) {
@@ -65,14 +65,10 @@
             return rtrim(rtrim(strtolower($url), '/'), '?');
         }
 
-        public static function makeRelative($url, $root) {
+        public static function makeRelative(string $url, string $root) {
             if(empty($root)) return $url;
-
-            $url = str_replace_first('/public', '', $url);
             
-            $pos = strpos($url, $root);
-
-            return $pos ? substr($url, $pos + strlen($root)) : $url;
+            return substr($url, strpos($url, $root) + strlen($root));
         }
 
         public static function join(...$items) {

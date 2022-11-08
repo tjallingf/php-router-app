@@ -1,7 +1,4 @@
 RewriteEngine On
 
-# Ignore if path exists
-RewriteCond %{REQUEST_FILENAME} !-f
-
-# Rewrite to router
+# Rewrite everything to router
 RewriteRule ^(.*)$ router.php [L]

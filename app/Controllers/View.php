@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
     class View {
         public static function get(string $__filename, array $__data = []) {

@@ -1,13 +1,14 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
-    use Tjall\Router\Helpers\Arr;
+    use Tjall\App\Helpers\Arr;
+    use Tjall\App\Controllers\Storage;
 
     class Config {
         public static array $data = [];
 
         public static function init() {
-            self::$data = json_decode(file_get_contents(root_dir() . '/storage/config.json'), true) ?? [];
+            self::$data = Storage::loadJSON('app/config');
         }
 
         public static function get(string $path) {

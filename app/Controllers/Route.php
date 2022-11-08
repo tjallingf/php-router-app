@@ -1,10 +1,11 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
-    use Tjall\Router\Controllers\Response;
-    use Tjall\Router\Controllers\Request;
-    use Tjall\Router\Helpers\Url;
-    use Tjall\Router\Helpers\Error;
+    use Tjall\App\Controllers\Response;
+    use Tjall\App\Controllers\Request;
+    use Tjall\App\Controllers\StaticAsset;
+    use Tjall\App\Helpers\Url;
+    use Tjall\App\Helpers\Error;
 
     class Route {
         private static $listeners = [];
@@ -32,8 +33,16 @@
             
             if(!isset($listener)) {
                 $res = Response::class;
-                $res::init(['json' => true]);
-                return $res::throw(404, 'quizlet')::end();
+                
+                // Check if a static asset exists
+                $static_asset = StaticAsset::getFilename($url);
+
+                // If a file was found, send it
+                if(!is_null($static_asset))
+                    return $res::init()::sendFile($static_asset)::end();
+
+                // Otherwise throw an error
+                return $res::init(['json' => true])::throw(404, 'Not found')::end();
             }
 
             $merged_options = array_merge($options, $listener['options']);

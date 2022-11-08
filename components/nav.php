@@ -1,6 +1,6 @@
 <?php 
-    use Tjall\Router\Controllers\Locale; 
-    use Tjall\Router\Controllers\Config;
+    use Tjall\App\Controllers\Locale; 
+    use Tjall\App\Controllers\Config;
 ?>
 <div class="nav">
     <ul class="nav__items nav__items--navigation">

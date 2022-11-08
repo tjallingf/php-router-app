@@ -1,5 +1,5 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
 
     class Component {
         public static function include(string $filename, array $data = []) {

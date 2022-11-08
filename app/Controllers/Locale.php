@@ -1,5 +1,8 @@
 <?php 
-    namespace Tjall\Router\Controllers;
+    namespace Tjall\App\Controllers;
+
+    use Tjall\App\Controllers\Config;
+    use Tjall\App\Exceptions\DisabledControllerException;
 
     class Locale {
         public static string $locale;
@@ -11,6 +14,9 @@
         }
 
         public static function translate($key, $replacements = []) {
+            if(!Config::get('controllers.locale.enabled'))
+                throw new DisabledControllerException(__CLASS__);
+
             $translation = @self::$translations[self::$locale][$key];
 
             if(!$translation)
@@ -25,7 +31,7 @@
             return $translation;
         }
 
-        public static function getTranslations() {
+        protected static function getTranslations() {
             $pattern = root_dir() . "/storage/locale/*.json";
             $files = glob($pattern);
 

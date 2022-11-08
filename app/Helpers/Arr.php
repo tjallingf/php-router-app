@@ -1,5 +1,5 @@
 <?php
-    namespace Tjall\Router\Helpers;
+    namespace Tjall\App\Helpers;
 
     class Arr {
         public static function getPath(array $arr, string $path) {

@@ -13,12 +13,12 @@ class ComposerStaticInitdf7919b34f6669584a9c99bac8a44f01
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'Tjall\\Router\\' => 13,
+            'Tjall\\App\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tjall\\Router\\' => 
+        'Tjall\\App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),

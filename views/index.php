@@ -1,6 +1,6 @@
 <?php 
-    use Tjall\Router\Controllers\Component; 
-    use Tjall\Router\Controllers\Locale;
+    use Tjall\App\Controllers\Component; 
+    use Tjall\App\Controllers\Locale;
 ?>
 <!DOCTYPE html>
 <html lang="en">

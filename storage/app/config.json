@@ -1,0 +1,19 @@
+{
+    "controllers": {
+        "locale": {
+            "enabled": true,
+            "available_locales": ["nl_NL", "en_US"],
+           	"default_locale": "en_US" 
+        },
+        "route": {
+            "enabled": true
+        },
+        "user": {
+            "enabled": true
+        },
+        "staticasset": {
+            "enabled": true,
+            "directory": "static"
+        }
+    }
+}
