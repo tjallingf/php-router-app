@@ -12,11 +12,13 @@
         protected static $body;
 
         public static function init(string $url, array $listener, array $params) {
+            parse_str(file_get_contents('php://input'), $body);
+
             self::$url = $url;
             self::$method = $listener['method'];
             self::$params = $params;
             self::$query = $_GET;
-            self::$body = $_POST;
+            self::$body = $body;
             
             if(Config::get('controllers.user.enabled'))
                 self::$user = @User::find($_SESSION['user_username'] ?? 'default') ?? @User::find('default');
