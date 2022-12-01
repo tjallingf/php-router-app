@@ -1,0 +1,9 @@
+{
+    "development": true,
+    "vite": {
+        "port": 5173,
+        "rootDir": "vite/src/",
+        "inputFile": "main.js",
+        "outDir": "../../public/static/dist/"
+    }
+}

@@ -1,17 +1,34 @@
 import { useState } from 'react';
-import '../../styles/components/App.scss';
+import Button from './Button';
 
 const App = () => {
-    const [ count, setCount ] = useState(10);
+    const [ counter, setCounter ] = useState(0);
 
     return (
-        <div className="App">
-            <h3>This is a React component</h3>
-            <p>Count: {count}</p>
-            <button onClick={() => setCount(cur => cur + 1)}>Increment</button>
-            <button onClick={() => setCount(cur => cur - 1)}>Decrement</button>
+        <div className="p-5">
+            <div className="card">
+                <div className="card-body">
+                    <h4 className="card-title">Counter: <b>{counter}</b></h4>
+                    <div className="card-text">
+                        <div className="row gx-2 flex-nowrap">
+                            <div className="col-auto">
+                                <Button 
+                                    icon="plus"
+                                    onClick={() => setCounter(cur => cur+1)}>
+                                    Increment</Button>
+                            </div>
+                            <div className="col-auto">
+                                <Button 
+                                    icon="minus"
+                                    onClick={() => setCounter(cur => cur-1)}>
+                                    Decrement</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    );
+    )
 }
 
 export default App;

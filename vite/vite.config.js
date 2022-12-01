@@ -1,24 +1,22 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { readFileSync } from 'fs';
+import { defineConfig } from 'vite';
 import { resolve } from 'path';
-
-const config = JSON.parse(readFileSync(resolve(__dirname, '../storage/app/config.json')));
+import config from '../app.json';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  root: 'src',
+  root: resolve('../', config.vite.rootDir),
   build: {
-    outDir: '../../public/static/dist',
+    outDir: config.vite.outDir,
     assetsDir: './',
     emptyOutDir: true,
     rollupOptions: {
-      input: resolve(__dirname, 'src/main.js'),
+      input: config.vite.inputFile,
     }
   },
   server: {
     strictPort: true,
-    port: config.vite.server.port
+    port: config.vite.port
   }
 })

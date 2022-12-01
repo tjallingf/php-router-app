@@ -1,7 +1,0 @@
-{
-    "view.index.title": "Home",
-    "view.index.sample_content": "Dit is een voorbeeldtekst, gebaseerd op de taal van de bezoeker.",
-    "view.about.title": "Over",
-    "view.about.field.name.title": "Naam",
-    "view.about.field.name.note": "De naam is bepaald door de router."
-}
