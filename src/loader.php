@@ -12,7 +12,7 @@
     // Load routes
     require_all(root_dir().'/resources/routes/');
 
-    define('APP_CONFIG_FILE', join_paths(root_dir(), 'app.json'));
+    define('APP_CONFIG_FILE', join_paths(root_dir(), 'app_config.json'));
     define('APP_VITE_SRC_DIR', str_replace('\\', '/', realpath(join_paths(root_dir(), Config::find('vite.rootDir'), Config::find('vite.srcDir')))));
     define('APP_VITE_OUT_DIR', str_replace('\\', '/', realpath(join_paths(root_dir(), Config::find('vite.rootDir'), Config::find('vite.outDir')))));
 

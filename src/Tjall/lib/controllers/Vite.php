@@ -6,21 +6,28 @@
     class Vite {
         protected static bool $preambleInjected = false;
 
-        public static function findScript(string $filename): string {
-
+        public static function includeScript(string $filename, array $attributes = []): string {
             $url = self::resolveUrl($filename);
 
             if(Config::find('development'))
-                return self::getPreambleCode()."<script src=\"$url\" type=\"module\"></script>";
-                
-            return "<script src=\"$url\"></script>";
+                return self::getPreambleCode().self::createNodeString('script', array_merge(
+                    $attributes,
+                    [ 'src' => $url, 'type' => 'module' ]
+                ));
+            
+            return self::createNodeString('script', array_merge(
+                $attributes,
+                [ 'src' => $url ]
+            ));
         }
 
-        public static function findStylesheet(string $filename): string {
+        public static function includeStylesheet(string $filename, array $attributes = []): string {
             $url = self::resolveUrl($filename);
 
+            // In development mode, styles should be
+            // imported by the main.js script file.
             if(Config::find('development'))
-                self::getPreambleCode()."<link rel=\"stylesheet\" href=\"$url\"></link>";
+                return '';
 
             return "<link rel=\"stylesheet\" href=\"$url\"></link>";
         }
@@ -48,13 +55,13 @@
 
             if(Config::find('development')) {
                 $domain = 'http://localhost:'.Config::find('vite.port');
-                $file = ltrim(str_replace(APP_VITE_SRC_DIR, '', $filepath), '/');
+                $url = ltrim(str_replace(APP_VITE_SRC_DIR, '', $filepath), '/');
             
-                return "$domain/$file";
+                return "$domain/$url";
             } else {
-                $file = join_paths(relative_root_dir(), str_replace(join_paths(root_dir(), 'public'), '', $filepath));
+                $url = join_paths(relative_root_dir(), str_replace(join_paths(root_dir(), 'public'), '', $filepath));
                 
-                return $file;
+                return $url;
             }
         }
 
@@ -82,6 +89,18 @@
             $dist_filename = $dist_files[0];
 
             return $dist_filename;
+        }
+        
+        protected function createNodeString(string $node, array $attributes = [], string $content = ''): string {
+            $node_string = "<$node ";
+
+            foreach ($attributes as $key => $value) {
+                $node_string .= "$key=\"$value\" ";
+            }
+            
+            $node_string = rtrim($node_string, ' ').">$content</$node/>";
+
+            return $node_string;
         }
     }
 ?>

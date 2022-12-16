@@ -1,0 +1,1 @@
+.Button{display:flex;flex-direction:row;align-items:center;column-gap:.5rem;background:hsl(226deg,77%,52%);color:#fff;padding:.5rem;min-width:7rem;cursor:pointer;border:none;border-radius:.3rem}.Button:hover{background:#1c47d4}body{font-family:Lato,sans-serif;overflow:hidden auto}

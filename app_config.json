@@ -1,5 +1,5 @@
 {
-    "development": true,
+    "development": false,
     "vite": {
         "port": 5173,
         "rootDir": "vite/src/",
