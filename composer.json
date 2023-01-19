@@ -1,10 +1,14 @@
 {
-    "name": "tjallingf/simple-php-router",
+    "name": "tjallingf/php-router-app",
+    "description": "A template project for the tjallingf/php-router library.",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Tjall\\": "src/Tjall"
+            "RouterApp\\": "src/RouterApp"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">=7.2",
+        "tjallingf/php-router": "dev-main"
+    }
 }

@@ -1,0 +1,20 @@
+@import '../variables';
+@import '../mixins/Button';
+
+.Button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+    color: $light;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: $rounded;
+}
+
+@include Button('primary', $primary);
+@include Button('success', $green);
+@include Button('danger', $red);
+@include Button('info', $blue);

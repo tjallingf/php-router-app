@@ -1,3 +1,2 @@
-<?php
-    // Here you can write code to run on each request,
-    // i.e. defining custom middleware 
+<?php 
+    // Code in this file is run on every request.

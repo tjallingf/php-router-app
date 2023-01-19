@@ -1,0 +1,8 @@
+body[data-theme="dark"] {
+    background: var(--bs-gray-900);
+
+    .card {
+        background: var(--bs-gray-800);
+        color: var(--bs-light);
+    }
+}

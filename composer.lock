@@ -4,15 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb0ab6f885520b6ab3da4c4338b0bd3f",
-    "packages": [],
+    "content-hash": "d2555d2e8e23d450df3ff63fc690cdf9",
+    "packages": [
+        {
+            "name": "tjallingf/php-router",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tjallingf/php-router.git",
+                "reference": "76f4135f776353bb9335e1104e71e45a9edb23ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tjallingf/php-router/zipball/76f4135f776353bb9335e1104e71e45a9edb23ef",
+                "reference": "76f4135f776353bb9335e1104e71e45a9edb23ef",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Router\\": "src/Router",
+                    "PHPHtmlParser\\": "src/paquettg/php-html-parser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A PHP router featuring routes, views, components.",
+            "support": {
+                "issues": "https://github.com/tjallingf/php-router/issues",
+                "source": "https://github.com/tjallingf/php-router/tree/v0.1.0"
+            },
+            "time": "2023-01-15T20:30:39+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "tjallingf/php-router": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.2"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
 }

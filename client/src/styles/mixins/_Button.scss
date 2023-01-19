@@ -1,0 +1,9 @@
+@mixin Button($name, $background) {
+    .Button--bg-#{$name} {
+        background: $background;
+
+        &:hover {
+            background: darken($background, 5);
+        }
+    }
+}

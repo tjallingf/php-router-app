@@ -1,9 +1,18 @@
 {
+    "name": "My App",
     "development": false,
-    "vite": {
+    "client": {
+        "rootDir": "client/",
+        "srcDir": "src/",
+        "outDir": "../public/static/dist/",
+        "inputFile": "index.js",
         "port": 5173,
-        "rootDir": "vite/src/",
-        "inputFile": "main.js",
-        "outDir": "../../public/static/dist/"
+        "startCommandWithInstall": "npm run install-dev",
+        "startCommand": "npm run dev",
+        "statusCheckEnabled": true
+    },
+    "router": {
+        "baseUrl": "/magistraal/",
+        "errorView": "error"
     }
 }
