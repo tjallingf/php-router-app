@@ -11,13 +11,3 @@
             'theme' => $req->getQuery('theme')
         ]));
     });
-
-    Route::get('/test', function($req, $res) {
-        return $res->send(Views::find('test', [
-            'theme' => $req->getQuery('theme')
-        ]));
-    });
-
-    Route::get('/out', function($req, $res) {
-        return $res->redirect('/app', false);
-    });
