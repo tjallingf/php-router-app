@@ -12,7 +12,7 @@
         "statusCheckEnabled": true
     },
     "router": {
-        "baseUrl": "/magistraal/",
+        "baseUrl": "",
         "errorView": "error"
     }
 }
