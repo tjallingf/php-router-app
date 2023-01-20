@@ -1,4 +1,4 @@
-<?php use Router\Helpers\App; use Router\Helpers\Config; ?>
+<?php use Router\Helpers\Client; use Router\Helpers\Config; ?>
 <head>
     <title><?= @$_PROPS['title']; ?> - <?= Config::get('name'); ?></title>
     
@@ -23,7 +23,7 @@
     
     <!-- App -->
     <?php if(@$_PROPS['include-app']) : ?>
-    <?= App::includeScript(App::findMainScript()); ?>
-    <?= App::includeStylesheet(App::findMainStylesheet()); ?>
+    <?= Client::includeScript(Client::findMainScript()); ?>
+    <?= Client::includeStylesheet(Client::findMainStylesheet()); ?>
     <?php endif; ?>
 </head>
