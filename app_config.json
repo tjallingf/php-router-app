@@ -1,6 +1,6 @@
 {
     "name": "My App",
-    "development": false,
+    "mode": "dev",
     "client": {
         "rootDir": "client/",
         "srcDir": "src/",
@@ -9,7 +9,8 @@
         "port": 5173,
         "startCommandWithInstall": "npm run install-dev",
         "startCommand": "npm run dev",
-        "statusCheckEnabled": true
+        "statusCheckEnabled": true,
+        "developmentModeEnabled": false
     },
     "router": {
         "baseUrl": "",
