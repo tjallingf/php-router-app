@@ -1,4 +1,4 @@
-<?php use Router\Helpers\Client; use Router\Helpers\Config; ?>
+<?php use Router\Client; use Router\Config; ?>
 <head>
     <title><?= @$_PROPS['title']; ?> - <?= Config::get('name'); ?></title>
     
@@ -21,8 +21,8 @@
     <!-- Bootstrap 5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     
-    <!-- App -->
-    <?php if(@$_PROPS['include-app']) : ?>
+    <!-- Counter -->
+    <?php if(@$_PROPS['include-counter']) : ?>
     <?= Client::includeScript(Client::findMainScript()); ?>
     <?= Client::includeStylesheet(Client::findMainStylesheet()); ?>
     <?php endif; ?>

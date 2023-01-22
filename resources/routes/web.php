@@ -1,13 +1,17 @@
 <?php
-    use Router\Helpers\Route;
-    use Router\Helpers\Views;
+    use Router\Route;
+    use Router\View;
+    use Router\Response;
+    use ExtendRouter\Request;
 
-    Route::get('/', function($req, $res) {
-        return $res->send(Views::find('home'));
+    Route::get('/', function(Request $req, Response $res) {
+        return $res->send(View::get('home', [
+            'user' => $req->user
+        ]));
     });
 
-    Route::get('/app', function($req, $res) {
-        return $res->send(Views::find('app', [
-            'theme' => $req->getQuery('theme')
+    Route::get('/counter', function(Request $req, Response $res) {
+        return $res->send(View::get('counter', [
+            'user' => $req->user
         ]));
     });

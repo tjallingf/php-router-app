@@ -2,7 +2,7 @@
     // Require Composer autoloader
     require(__DIR__.'/../vendor/autoload.php');
 
-    use Router\Helpers\Loader;
+    use Router\Loader;
     use Router\Lib;
     
     // Determines the root directory of the project

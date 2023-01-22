@@ -3,8 +3,14 @@
     "description": "A template project for the tjallingf/php-router library.",
     "license": "Apache-2.0",
     "type": "project",
+    "autoload": {
+        "psr-4": {
+            "ExtendRouter\\": "src/ExtendRouter",
+            "MyApp\\": "src/MyApp"
+        }
+    },
     "require": {
-        "php": ">=7.2",
-        "tjallingf/php-router": "^0.2.0"
+        "php": ">=8.0",
+        "tjallingf/php-router": "^0.3.0"
     }
 }

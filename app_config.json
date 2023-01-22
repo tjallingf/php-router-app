@@ -13,7 +13,10 @@
         "developmentModeEnabled": false
     },
     "router": {
-        "baseUrl": "",
+        "baseUrl": "/",
         "errorView": "error"
+    },
+    "overrides": {
+        "namespace": "ExtendRouter\\"
     }
 }

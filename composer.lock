@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a06edd1029399987bdf8034c3a87427",
+    "content-hash": "64ac6902fc38512626ccde95eb03fffb",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -778,16 +778,16 @@
         },
         {
             "name": "tjallingf/php-router",
-            "version": "v0.2.2",
+            "version": "v0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tjallingf/php-router.git",
-                "reference": "4dd2f1fd5553756caa3e7a5e9f44a0bdb4c6ce99"
+                "reference": "4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tjallingf/php-router/zipball/4dd2f1fd5553756caa3e7a5e9f44a0bdb4c6ce99",
-                "reference": "4dd2f1fd5553756caa3e7a5e9f44a0bdb4c6ce99",
+                "url": "https://api.github.com/repos/tjallingf/php-router/zipball/4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9",
+                "reference": "4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9",
                 "shasum": ""
             },
             "require": {
@@ -819,9 +819,9 @@
             "description": "A PHP router featuring routes, views, components.",
             "support": {
                 "issues": "https://github.com/tjallingf/php-router/issues",
-                "source": "https://github.com/tjallingf/php-router/tree/v0.2.2"
+                "source": "https://github.com/tjallingf/php-router/tree/v0.3.1"
             },
-            "time": "2023-01-19T18:33:52+00:00"
+            "time": "2023-01-22T11:43:30+00:00"
         }
     ],
     "packages-dev": [],
@@ -831,7 +831,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=8.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
