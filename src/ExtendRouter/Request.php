@@ -1,9 +1,8 @@
 <?php
     namespace ExtendRouter;
 
-    use Router\Request as BaseRequest;
     use MyApp\Models\UserModel;
 
-    class Request extends BaseRequest {
+    class Request extends \Router\Request {
         public ?UserModel $user = null;
     }

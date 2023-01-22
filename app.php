@@ -20,11 +20,3 @@
             ]
         ]);
     }));
-
-    // Example of how to add something to the Request->$data object.
-    // This can be done with the default Router\Request class, and
-    // could also be combined with the middleware above.
-    Router::use(Middleware::mapRequest('check_auth', function(Request $req, Response $res) {
-        if($req->user instanceof UserModel)
-            $res->data->authenticated = true;
-    }));

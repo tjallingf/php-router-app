@@ -16,4 +16,4 @@
     if(file_exists(Lib::getRootDir().'/app.php'))
         require(Lib::getRootDir().'/app.php');
 
-    exit(Loader::loadRouter());
+    Loader::loadRouter();

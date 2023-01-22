@@ -8,8 +8,16 @@
             $this->props = $props;
         }
 
+        public function getFirstName(): string|null {
+            return @$this->props['first_name'];
+        }
+
+        public function getLastName(): string|null {
+            return @$this->props['last_name'];
+        }
+
         public function getName() {
-            return $this->props['first_name'].' '.$this->props['last_name'];
+            return $this->getFirstName().' '.$this->getLastName();
         }
 
         public function getSetting(string $setting): mixed {
