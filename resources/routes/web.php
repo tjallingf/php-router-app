@@ -5,6 +5,7 @@
     use ExtendRouter\Request as ExtRequest;
     use Router\Middleware;
     use Router\Tests\Data\Pictures;
+    use Router\ApiHandler;
 
     Route::get('/', function(ExtRequest $req, Response $res) {
         return $res->send(View::get('home', [
@@ -21,5 +22,13 @@
         ]));
     });
 
-    // Use classes to create api routes
-    Route::api('/api/pictures', Pictures::class, [ 'index' => 'get', 'find' => 'getOne' ]);
+    // Use classes to create REST api routes
+    Route::api('/api/users/{user_id}/pictures', ApiHandler::create(Pictures::class, [
+        'methods' => [
+            'index' => 'get',
+            'find' => 'getOne',
+            'update' => false,
+            'edit' => false,
+            'create' => false
+        ]
+    ]));
