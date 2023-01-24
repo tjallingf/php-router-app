@@ -778,16 +778,16 @@
         },
         {
             "name": "tjallingf/php-router",
-            "version": "v0.3.1",
+            "version": "v0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tjallingf/php-router.git",
-                "reference": "4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9"
+                "reference": "d1880f2befe1fccb5988a84572da21a8133faa38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tjallingf/php-router/zipball/4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9",
-                "reference": "4b75c6b18b9e5a0a85cd9a94353d11cd3b70f7b9",
+                "url": "https://api.github.com/repos/tjallingf/php-router/zipball/d1880f2befe1fccb5988a84572da21a8133faa38",
+                "reference": "d1880f2befe1fccb5988a84572da21a8133faa38",
                 "shasum": ""
             },
             "require": {
@@ -819,9 +819,9 @@
             "description": "A PHP router featuring routes, views, components.",
             "support": {
                 "issues": "https://github.com/tjallingf/php-router/issues",
-                "source": "https://github.com/tjallingf/php-router/tree/v0.3.1"
+                "source": "https://github.com/tjallingf/php-router/tree/v0.3.3"
             },
-            "time": "2023-01-22T11:43:30+00:00"
+            "time": "2023-01-23T07:36:12+00:00"
         }
     ],
     "packages-dev": [],
