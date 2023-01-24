@@ -22,4 +22,4 @@
     });
 
     // Use classes to create api routes
-    Route::create('/api/pictures', Pictures::class, [ 'index' => 'get', 'find' => 'getOne' ]);
+    Route::api('/api/pictures', Pictures::class, [ 'index' => 'get', 'find' => 'getOne' ]);
