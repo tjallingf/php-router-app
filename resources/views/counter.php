@@ -5,7 +5,7 @@
         'dark'  => ['#ffffff', '#111111']
     ];
 
-    $use_theme = $_PROPS['user']->getSetting('counter_theme');
+    $use_theme = $props->user->getSetting('counter_theme');
 
     if(!isset($available_themes[$use_theme]))
         $use_theme = array_key_first($available_themes);

@@ -1,5 +1,5 @@
 <?php
-    namespace MyApp\Models;
+    namespace App\Models;
 
     class UserModel {
         protected array $props = [];

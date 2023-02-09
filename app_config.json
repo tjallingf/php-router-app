@@ -1,19 +1,18 @@
 {
     "name": "My App",
-    "mode": "dev",
+    "mode": "prod",
     "client": {
-        "rootDir": "client/",
-        "srcDir": "src/",
-        "outDir": "../public/static/dist/",
+        "srcDir": "client/src/",
+        "outDir": "public/static/dist/",
         "inputFile": "index.js",
         "port": 5173,
         "startCommandWithInstall": "npm run install-dev",
         "startCommand": "npm run dev",
         "statusCheckEnabled": true,
-        "developmentModeEnabled": false
+        "developmentModeEnabled": true
     },
     "router": {
-        "baseUrl": "/",
+        "baseUrl": "/test",
         "errorView": "error"
     },
     "overrides": {

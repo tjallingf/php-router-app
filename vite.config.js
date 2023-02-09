@@ -4,9 +4,8 @@ import config from './app_config.json';
 import react from '@vitejs/plugin-react';
 import legacy from '@vitejs/plugin-legacy'
 
-const rootDir = path.resolve(config.client.rootDir);
-const srcDir  = path.join(rootDir, config.client.srcDir);
-const outDir  = path.resolve(rootDir, config.client.outDir);
+const outDir = path.resolve(config.client.outDir);
+const srcDir = path.resolve(config.client.srcDir);
 
 // https://vitejs.dev/config/
 export default defineConfig({

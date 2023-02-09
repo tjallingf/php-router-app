@@ -1,7 +1,6 @@
-<?php use Router\Config; ?>
 <?php 
     $greeting = 'Hi';
-    $last_visit = ($_PROPS['last_visit'] > 0 ? $_PROPS['last_visit'] : null);
+    $last_visit = ($props->last_visit > 0 ? $props->last_visit : null);
     
     // Use a different greeting if the last visit occured at most 4 hours ago
     if(isset($last_visit) && (time() - $last_visit) > 4 * 60 * 60) {
@@ -16,11 +15,11 @@
 <Head title="Home" />
 <body class="h-100">
     <div class="h-100 container justify-content-center align-items-center d-flex flex-column">
-        <h4 class="mb-1"><?= $greeting; ?>, <b><?= $_PROPS['user']->getFirstName(); ?></b>!</h4>
+        <h4 class="mb-1"><?= $greeting; ?>, <b><?= $props->user->getFirstName(); ?></b>!</h4>
         <p><?= $last_visit_message; ?></p>
-        <a href="<?= Config::get('router.baseUrl'); ?>/counter" class="btn btn-primary mb-1 d-block">
+        <Link to="/counter" class="btn btn-primary mb-1 d-block">
             Open counter
-        </a>
+        </Link>
     </div>
 </body>
 </html>

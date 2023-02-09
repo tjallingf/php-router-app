@@ -6,7 +6,7 @@
     "autoload": {
         "psr-4": {
             "ExtendRouter\\": "src/ExtendRouter",
-            "MyApp\\": "src/MyApp"
+            "App\\": "src/App"
         }
     },
     "require": {

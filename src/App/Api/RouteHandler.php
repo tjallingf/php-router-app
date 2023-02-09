@@ -1,5 +1,5 @@
 <?php
-    namespace MyApp\Api;
+    namespace App\Api;
 
     class RouteHandler {
         protected string $controllerClass;

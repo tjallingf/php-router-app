@@ -1,6 +1,6 @@
 <?php use Router\Client; use Router\Config; ?>
 <head>
-    <title><?= @$_PROPS['title']; ?> - <?= Config::get('name'); ?></title>
+    <title><?= @$props->title; ?> - <?= Config::get('name'); ?></title>
     
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,8 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     
     <!-- Counter -->
-    <?php if(@$_PROPS['include-counter']) : ?>
-    <?= Client::includeScript(Client::findMainScript()); ?>
-    <?= Client::includeStylesheet(Client::findMainStylesheet()); ?>
+    <?php if($props->include_counter) : ?>
+    <?= Client::include(); ?>
     <?php endif; ?>
 </head>

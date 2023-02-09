@@ -13,7 +13,7 @@
             'last_visit' => intval($req->getCookie('last_visit')?->getValue())
         ]));
     })->use(Middleware::mapResponse('last_visit_cookie', function(ExtRequest $req, Response $res) {
-        $res->sendCookie($res->createCookie('last_visit', time()));
+        $res->sendCookie($res->createCookie('last_visit', time(), time()+365*24*60*60));
     }));
 
     Route::get('/counter', function(ExtRequest $req, Response $res) {
@@ -23,12 +23,9 @@
     });
 
     // Use classes to create REST api routes
-    Route::api('/api/users/{user_id}/pictures', ApiHandler::create(Pictures::class, [
+    Route::api('/api/users/{user_id}/pictures', Pictures::class, [
         'methods' => [
             'index' => 'get',
-            'find' => 'getOne',
-            'update' => false,
-            'edit' => false,
-            'create' => false
+            'find' => 'getOne'
         ]
-    ]));
+    ]);
