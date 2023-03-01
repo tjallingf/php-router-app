@@ -12,7 +12,7 @@
         "developmentModeEnabled": true
     },
     "router": {
-        "baseUrl": "/test",
+        "baseUrl": "/",
         "errorView": "error"
     },
     "overrides": {
