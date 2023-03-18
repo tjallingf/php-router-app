@@ -8,7 +8,11 @@
         "input": "main.jsx",
         "devPort": 5173
     },
-    "router": {
-        "basePath": "/"
+    "views": {
+        "dir": "views/"
+    },
+    "routes": {
+        "dir": "/routes/",
+        "basePath": "/hihi/"
     }
 }
