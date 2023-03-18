@@ -1,6 +1,19 @@
-<?php use Router\Client; use Router\Config; ?>
+<?php 
+    use Tjall\Router\Context;
+    use Tjall\Router\Vite;
+    use Tjall\Router\Config;
+
+    $themes = [
+        // Theme - Text color - Background color
+        'light' => ['#222222', '#ffffff'], 
+        'dark'  => ['#ffffff', '#111111']
+    ];
+
+    $theme_id = Context::getOrFail('theme');
+?>
+<html lang="en">
 <head>
-    <title><?= @$props->title; ?> - <?= Config::get('name'); ?></title>
+    <title>Counter - <?= Config::get('name'); ?></title>
     
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,8 +34,15 @@
     <!-- Bootstrap 5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     
-    <!-- Counter -->
-    <?php if($props->include_counter) : ?>
-    <?= Client::include(); ?>
-    <?php endif; ?>
+    <?= Vite::include(); ?>
 </head>
+<body data-theme="<?= $theme_id; ?>">
+    <div id="root">Loading counter...</div>
+    <style>
+        body {
+            color: <?= $available_themes[$theme_id][0] ?>;
+            background-color: <?= $available_themes[$theme_id][1] ?>;
+        }
+    </style>
+</body>
+</html>

@@ -5,12 +5,11 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "ExtendRouter\\": "src/ExtendRouter",
-            "App\\": "src/App"
+            "MyApp\\": "src/MyApp"
         }
     },
     "require": {
         "php": ">=8.0",
-        "tjallingf/php-router": "^0.3.0"
+        "tjallingf/php-router": "^1.0.0"
     }
 }

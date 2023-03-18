@@ -1,21 +1,14 @@
 {
     "name": "My App",
-    "mode": "prod",
-    "client": {
-        "srcDir": "client/src/",
-        "outDir": "public/static/dist/",
-        "inputFile": "index.js",
-        "port": 5173,
-        "startCommandWithInstall": "npm run install-dev",
-        "startCommand": "npm run dev",
-        "statusCheckEnabled": true,
-        "developmentModeEnabled": true
+    "mode": "dev",
+    "vite": {
+        "mode": "prod",
+        "srcDir": "client/src",
+        "outDir": "public/static/dist",
+        "input": "main.jsx",
+        "devPort": 5173
     },
     "router": {
-        "baseUrl": "/",
-        "errorView": "error"
-    },
-    "overrides": {
-        "namespace": "ExtendRouter\\"
+        "basePath": "/"
     }
 }

@@ -1,0 +1,24 @@
+{
+  "main-legacy.jsx": {
+    "file": "main-legacy.a8cd7213.js",
+    "src": "main-legacy.jsx",
+    "isEntry": true
+  },
+  "../../vite/legacy-polyfills-legacy": {
+    "file": "polyfills-legacy.08b27c5f.js",
+    "src": "../../vite/legacy-polyfills-legacy",
+    "isEntry": true
+  },
+  "main.jsx": {
+    "file": "main.6d97cddf.js",
+    "src": "main.jsx",
+    "isEntry": true,
+    "css": [
+      "main.4da8dd66.css"
+    ]
+  },
+  "main.css": {
+    "file": "main.4da8dd66.css",
+    "src": "main.css"
+  }
+}
