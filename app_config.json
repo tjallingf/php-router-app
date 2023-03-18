@@ -13,6 +13,6 @@
     },
     "routes": {
         "dir": "routes/",
-        "basePath": "/"
+        "basePath": "/test"
     }
 }
