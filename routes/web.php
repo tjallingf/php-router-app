@@ -6,6 +6,10 @@
 
     Router::group(function() {
         Router::get('/', function($req, $res) {
+            $res->send(View::get('home'));
+        });
+
+        Router::get('/', function($req, $res) {
             $res->redirect('/counter');
         });
 
