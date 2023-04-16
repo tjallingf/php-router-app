@@ -10,9 +10,10 @@
             $res->send(View::get('home'));
         });
 
-        Router::get('/counter', function(Request $req, Response $res) {
+        Router::get('/counter/{a?}/{b}/{c?}', function(Request $req, Response $res) {
             $res->send(View::get('counter', [
-                'theme' => 'dark'
+                'theme' => 'dark',
+                'params' => $req->params
             ]));
         });
     });

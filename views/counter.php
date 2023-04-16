@@ -10,6 +10,7 @@
     ];
 
     $theme_id = Context::getOrFail('theme');
+    $params = Context::getOrFail('params');
 ?>
 <html lang="en">
 <head>
@@ -38,10 +39,13 @@
 </head>
 <body data-theme="<?= $theme_id; ?>">
     <div id="root">Loading counter...</div>
+    <div class="container-fluid">
+        <p>Params: <?php echo(http_build_query(array_map(function($p) { return $p ?? 'NULL'; }, $params), '', '; ')); ?></p>
+    </div>
     <style>
         body {
-            color: <?= $available_themes[$theme_id][0] ?>;
-            background-color: <?= $available_themes[$theme_id][1] ?>;
+            color: <?= $themes[$theme_id][0] ?>;
+            background-color: <?= $themes[$theme_id][1] ?>;
         }
     </style>
 </body>
