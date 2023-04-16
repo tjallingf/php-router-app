@@ -13,6 +13,9 @@
     },
     "routes": {
         "dir": "routes/",
-        "basePath": "/"
+        "basePath": "/",
+        "rewrite": {
+            "alias": "counter"
+        }
     }
 }
